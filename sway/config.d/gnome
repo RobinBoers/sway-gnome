@@ -24,4 +24,4 @@ exec /usr/libexec/xdg-desktop-portal -r
 exec_always systemctl --user start swaybg
 
 exec nm-applet
-exec sh -c 'systemctl --user import-environment; systemctl --user start sway-session.target'
+exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
