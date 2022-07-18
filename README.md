@@ -43,11 +43,25 @@ Not all daemons are enabled and further work is necessary for full-compatibility
 
 ## Usage
 
-You may install the system files via `sudo make install` and then copy the
-contents of `systemd/user` to `$HOME/.config/systemd/user` and adjust them for
-your personal needs.
+Install the system files using:
 
-In your login manager `Sway (systemd)` should be startable as a new session.
+```shell
+meson builddir && cd builddir
+meson compile
+meson install
+```
+
+Then add this line to your sway config:
+
+```sway
+include /etc/sway/config.d/*
+```
+
+In your login manager `Sway (systemd)` should be startable as a new session. Alternatively, you can manually start sway using:
+
+```shell
+sway-user-session
+```
 
 ## Dependencies
 

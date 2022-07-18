@@ -1,13 +1,13 @@
 # Maintainer: Robin Boers <robin@geheimesite.nl>
 _pkgname="sway-gnome"
 pkgname="$_pkgname-git"
-pkgver=0.3.0.r9.g2f76e99
+pkgver=0.3.0
 pkgrel=1
 pkgdesc="Opinionated Sway Configuration using GNOME session services, for GNOME >= 3.34"
 arch=("x86_64")
 url="https://github.com/RobinBoers/$_pkgname"
 license=("MIT")
-depends=(sway swaylock swayidle kanshi mako gnome-session xdg-desktop-portal polkit-gnome gnome-keyring gnome-settings-daemon clipman)
+depends=(sway swaylock swayidle swaybg kanshi mako gnome-session xdg-desktop-portal polkit-gnome gnome-keyring gnome-settings-daemon clipman brightnessctl playerctl redshift gnome-control-center)
 makedepends=(meson)
 provides=("$_pkgname")
 source=("$_pkgname::git+https://github.com/RobinBoers/$_pkgname#branch=pkgbuild")
