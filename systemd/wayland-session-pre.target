@@ -3,6 +3,6 @@ Description=Session services which should run early before the wayland session i
 Documentation=man:systemd.special(7)
 Requires=basic.target
 Before=wayland-session.target
-RefuseManualStart=yes
+RefuseManualStart=no
 StopWhenUnneeded=yes
 BindsTo=graphical-session-pre.target

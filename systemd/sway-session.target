@@ -2,7 +2,7 @@
 Description=sway user session
 Documentation=man:systemd.special(7)
 Requires=basic.target
-RefuseManualStart=yes
+RefuseManualStart=no
 StopWhenUnneeded=yes
 BindsTo=wayland-session.target
 Before=wayland-session.target
