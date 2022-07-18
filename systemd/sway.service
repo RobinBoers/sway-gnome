@@ -10,7 +10,7 @@ Before=sway-session.target
 
 [Service]
 Type=notify
-EnvironmentFile=-%h/.config/sway/env
+EnvironmentFile=/etc/sway/env
 ExecStart=/usr/bin/sway
 Restart=on-failure
 RestartSec=1

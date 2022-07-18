@@ -1,7 +1,3 @@
-# #################### #
-# < YOUR CONFIG HERE > #
-# #################### #
-
 bindsym --locked XF86AudioRaiseVolume    exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym --locked XF86AudioLowerVolume    exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym --locked XF86AudioMute           exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -16,10 +12,13 @@ bindsym --locked XF86AudioNext           exec playerctl next
 bindsym --locked XF86AudioPrev           exec layerctl previous
 
 # Lockscreen
-bindsym $mod+Escape exec swaylock
+bindsym $mod+l exec swaylock --grace 0
 
 # Desktop portal
 exec /usr/libexec/xdg-desktop-portal -r
+
+# Clipboard
+exec wl-paste -t text --watch clipman store
 
 exec_always systemctl --user start swaybg
 
