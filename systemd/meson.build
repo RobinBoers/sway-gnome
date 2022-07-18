@@ -1,6 +1,10 @@
 services = [
   'gnome-keyring.service',
   'polkit-gnome.service',
+  'kanshi.service',
+  'redshift.service',
+  'swaybg.service',
+  'swayidle.service',
   'sway-session-pre.target',
   'sway-session.target',
   'sway.service',
