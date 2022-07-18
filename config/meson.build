@@ -1,5 +1,5 @@
 sway_config_files = [
-  'sway/10-service.conf'
+  'sway/10-service.conf',
   'sway/gnome'
 ]
 env_file = [
