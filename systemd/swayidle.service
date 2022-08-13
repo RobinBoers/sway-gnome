@@ -5,7 +5,7 @@ PartOf=graphical-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/swayidle -w before-sleep swaylock
+ExecStart=/usr/bin/swayidle -w before-sleep swaylock --image $(gsettings get org.gnome.desktop.background picture-uri | cut -c 9- | rev | cut -c 2- | rev)
 
 [Install]
 WantedBy=sway-session.target

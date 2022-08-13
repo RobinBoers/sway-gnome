@@ -17,7 +17,7 @@ bindsym --locked XF86AudioNext           exec playerctl next
 bindsym --locked XF86AudioPrev           exec layerctl previous
 
 # Lockscreen
-bindsym $mod+l exec swaylock --grace 0
+bindsym $mod+l exec swaylock --grace 0 --image $(gsettings get org.gnome.desktop.background picture-uri | cut -c 9- | rev | cut -c 2- | rev)
 
 # Desktop portal
 exec /usr/libexec/xdg-desktop-portal -r
