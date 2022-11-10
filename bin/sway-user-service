@@ -1,12 +1,11 @@
 #!/bin/bash
 
 # Mostly untouched from https://github.com/xdbob/sway-services
-
 # From: https://people.debian.org/~mpitt/systemd.conf-2016-graphical-session.pdf
 
-# robustness: if the previous graphical session left some failed units,
+# Robustness: if the previous graphical session left some failed units,
 # reset them so that they don't break this startup
-for unit in $(systemctl --user --no-legend --state=failed list-units | cut -f1 -d' '); do
+for unit in $(systemctl --user --no-legend --plain --state=failed list-units | cut -f1 -d' '); do
 	partof="$(systemctl --user show -p PartOf --value "$unit")"
 	for target in sway-session.target wayland-session.target graphical-session.target; do
 		if [ "$partof" = "$target" ]; then
@@ -22,10 +21,10 @@ source /etc/profile
 # Save environment before adding to systemd (to be removed after sway stops)
 new_envs=$(systemctl --user show-environment | cut -d'=' -f 1 | sort | comm -13 - <(env | cut -d'=' -f 1 | sort))
 
-# first import environment variables from the login manager
+# First import environment variables from the login manager
 systemctl --user import-environment
 
-# then start the service
+# Then start the service
 systemctl --wait --user start sway.service
 
 # Cleanup environment (see above)
