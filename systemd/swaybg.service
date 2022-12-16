@@ -1,6 +1,6 @@
 [Unit]
-Description=Idle manager for Wayland
-Documentation=man:swayidle(1)
+Description=Wallpaper setter for sway
+Documentation=man:swaybg(1)
 PartOf=graphical-session.target
 
 [Service]
