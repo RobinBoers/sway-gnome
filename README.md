@@ -119,7 +119,6 @@ You need to manually install these dependencies first:
 -   xdg-desktop-portal - desktop integration for Flatpak and Snap
 -   swayidle - for idle management
 -   swaylock - for screen lock
--   redshift - for automatic screen dimming
 -   policykit-1-gnome - privilege management
 -   mako - lightweight Wayland
 -   [kanshi](https://github.com/emersion/kanshi) - Dynamic display configuration for Wayland
