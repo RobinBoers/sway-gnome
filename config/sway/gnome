@@ -20,7 +20,7 @@ bindsym --locked XF86AudioPrev           exec layerctl previous
 bindsym $mod+l exec swaylock --grace 0 --image $(gsettings get org.gnome.desktop.background picture-uri | cut -c 9- | rev | cut -c 2- | rev)
 
 # Desktop portal
-exec /usr/libexec/xdg-desktop-portal -r
+exec xdg-desktop-portal -r
 
 # Clipboard
 exec wl-paste -t text --watch clipman store
@@ -28,4 +28,4 @@ exec wl-paste -t text --watch clipman store
 exec_always systemctl --user start swaybg
 
 exec nm-applet
-exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
+exec "systemctl --user import-environment DBUS_SESSION_BUS_ADDRESS XAUTHORITY {,WAYLAND_}DISPLAY SWAYSOCK && exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK DBUS_SESSION_BUS_ADDRESS XAUTHORITY; systemctl --user start sway-session.target"
