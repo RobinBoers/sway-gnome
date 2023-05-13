@@ -1,7 +1,7 @@
 # Maintainer: Robin Boers <robin@geheimesite.nl>
 _pkgname="sway-gnome"
 pkgname="$_pkgname-git"
-pkgver=0.3.0
+pkgver=0.3.0.r21.g21d63b5
 pkgrel=1
 pkgdesc="Opinionated Sway Configuration using GNOME session services, for GNOME >= 3.34"
 arch=("x86_64")

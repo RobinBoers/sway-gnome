@@ -28,4 +28,4 @@ exec wl-paste -t text --watch clipman store
 exec_always systemctl --user start swaybg
 
 exec nm-applet
-exec "systemctl --user import-environment DBUS_SESSION_BUS_ADDRESS XAUTHORITY {,WAYLAND_}DISPLAY SWAYSOCK && exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK DBUS_SESSION_BUS_ADDRESS XAUTHORITY; systemctl --user start sway-session.target"
+exec "systemctl --user import-environment DBUS_SESSION_BUS_ADDRESS XAUTHORITY {,WAYLAND_}DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP && exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway DBUS_SESSION_BUS_ADDRESS XAUTHORITY; systemctl --user start sway-session.target"
