@@ -29,3 +29,5 @@ exec_always systemctl --user start swaybg
 
 exec nm-applet
 exec systemctl --user start sway-session.target
+
+exec playerctld
